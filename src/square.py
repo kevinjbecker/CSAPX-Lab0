@@ -27,8 +27,14 @@ def draw_square(length : int) -> None:
     :param length: the length in pixels of one side of the square
     :return: None
     """
-    for _ in range(4):
+    turtle.setx(turtle.xcor()-length) #sets the x coordinate back length so the squares are in the middle of the screen
+    for _ in range(8): #the range has been modified to 8 from 4
         turtle.forward(length)
+        if _ == 4: #_ is 4 when it is beginning to draw the second square
+            turtle.penup()
+            turtle.forward(10)
+            turtle.pendown()
+            turtle.forward(length)
         turtle.left(90)
 
 
